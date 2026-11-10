@@ -71,7 +71,7 @@ class ProjectMDWriter:
 
     def __rel(self, path:str)->str:
         try:
-            return os.path.relpath(self.__builder.root_dir).replace(os.sep,"/")
+            return os.path.relpath(os.path.join(self.__builder.root_dir,path)).replace(os.sep,"/")
         except ValueError:
             return os.path.basename(path)
 
